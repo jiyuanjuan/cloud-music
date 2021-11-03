@@ -1,0 +1,26 @@
+/* 推荐文本区域 */
+.recommendContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10rpx 20rpx;
+}
+
+.recommendContainer .recommendTitle {
+    color: rgb(136, 135, 135);
+}
+
+.recommendContainer .recommend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.recommendContainer .recommend .more {
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 30rpx;
+    padding: 0 20rpx;
+    font-size: 24rpx;
+}

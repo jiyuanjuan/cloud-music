@@ -1,0 +1,68 @@
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper class="banners" autoplay indicator-dots indicator-color='ivory' indicator-active-color='#d43c33' interval='2000'>
+    <swiper-item wx:for="{{bannerData}}" wx:key="imageUrl">
+      <image src="{{item.imageUrl}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 图标导航栏 -->
+  <view class="navContainer">
+    <view class="navItem" wx:for="{{recommendData}}" wx:key="index">
+      <view class="iconfont {{item}}"></view>
+      <text>{{index}}</text>
+    </view>
+  </view>
+
+  <!-- 推荐区域 -->
+  <view class="recommend">
+    <!-- 推荐头部组件 -->
+    <recommend title="推荐歌曲" text="为您精心推荐" more="查看更多"></recommend>
+    <!-- 推荐内容区 -->
+    <scroll-view class="recommendScroll" enable-flex scroll-x>
+      <view class="scrollItem" wx:for="{{personalizedData}}" wx:key="id">
+        <image src="{{item.picUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 排行榜 -->
+  <view class="topList">
+    <!-- 头部区域 -->
+    <recommend title="排行榜" text="热歌风向标" more="查看更多"></recommend>
+    <!-- 内容区 -->
+    <view class="topListContainer">
+      <swiper class="topListSwiper" scroll-x circular enable-flex>
+        <swiper-item class="topSwiperItem" wx:for="999" wx:key="*this">
+          <text class="topTitle">item</text>
+          <view class="itemInfo">
+            <image src="/static/images/placeholder.jpg"></image>
+            <text>1</text>
+            <text>name</text>
+          </view>
+          <view class="itemInfo">
+            <image src="/static/images/placeholder.jpg"></image>
+            <text>1</text>
+            <text>name</text>
+          </view>
+          <view class="itemInfo">
+            <image src="/static/images/placeholder.jpg"></image>
+            <text>1</text>
+            <text>name</text>
+          </view>
+          <view class="itemInfo">
+            <image src="/static/images/placeholder.jpg"></image>
+            <text>1</text>
+            <text>name</text>
+          </view>
+          <view class="itemInfo">
+            <image src="/static/images/placeholder.jpg"></image>
+            <text>1</text>
+            <text>name</text>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class="recommendContainer">
+  <text class="recommendTitle">{{title}}</text>
+  <view class="recommend">
+    <text class="recommendLove">{{text}}</text>
+    <view class="more">{{more}}</view>
+  </view>
+</view>
