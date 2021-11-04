@@ -1,1 +1,127 @@
-/* pages/profile/profile.wxss */
+/* 头部 */
+.personalContainer {
+    width: 100%;
+    position: relative;
+}
+
+.userLogin {
+    width: 100%;
+}
+
+.userLogin .bg {
+    width: 100%;
+    height: 540rpx;
+    position: absolute;
+    z-index: 0;
+}
+
+.userLogin .loginInfo {
+    padding: 50rpx 40rpx 0 40rpx;
+}
+
+.userLogin .loginInfo .avatar {
+    position: relative;
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    z-index: 1;
+}
+
+.userLogin .loginInfo .avatar image {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 30rpx;
+}
+
+.userLogin .loginInfo .avatar text {
+    height: 160rpx;
+    line-height: 160rpx;
+}
+
+.userLogin .loginInfo .vipCard {
+    width: 100%;
+    height: 290rpx;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f7d680;
+    border-radius: 10rpx;
+    position: relative;
+    z-index: 1;
+}
+
+.userLogin .loginInfo .vipCard image {
+    position: absolute;
+    width: 374rpx;
+    height: 260rpx;
+    right: 0;
+}
+
+.userLogin .loginInfo .vipCard .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rpx 30rpx;
+    position: relative;
+    z-index: 2;
+}
+
+.userLogin .loginInfo .vipCard .item:first-child {
+    padding-top: 26rpx;
+}
+
+.userLogin .loginInfo .vipCard .item .joinVip {
+    font-size: 20rpx;
+    background-color: rgb(235, 197, 72);
+    color: rgb(59, 59, 59);
+    width: 120rpx;
+    text-align: center;
+    height: 36rpx;
+    line-height: 36rpx;
+    border-radius: 20rpx;
+}
+
+.userLogin .loginInfo .vipCard .item .iconfont {
+    font-size: 28rpx;
+}
+
+.userLogin .loginInfo .vipCard .item .dec {
+    font-size: 24rpx;
+}
+
+/* 用户信息 */
+.userInfo {
+    width: 100%;
+    height: 600rpx;
+    margin-top: -120rpx;
+    position: relative;
+    z-index: 3;
+}
+
+.userInfo .arc{
+    width: 100%;
+    height: 35rpx;
+    position: relative;
+    z-index: 3;
+}
+
+.userInfo .info{
+    height: 530rpx;
+    margin-top: -10rpx;
+    background-color: rgb(249, 249, 249);
+}
+
+.userInfo .info .item1{
+    display: flex;
+    justify-content:space-around;
+    background-color: #fff;
+    border-radius: 30rpx;
+    padding: 10rpx 0;
+}
+
+.userInfo .info .item1 .iconfont{
+font-size: 50rpx;
+text-align: center;
+color: rgb(209, 24, 24);
+}
+
+.userInfo .info .item1 text{
+    font-size: 24rpx;
+}

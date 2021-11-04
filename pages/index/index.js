@@ -13,8 +13,8 @@ Page({
       '直播': 'icon-zhibo'
     }
   },
+
   onLoad: async function () {
-    let index = 0
     let banner = await request('/banner')
     let personalized = await request('/personalized', {
       limit: 20
@@ -23,14 +23,21 @@ Page({
       bannerData: banner.banners,
       personalizedData: personalized.result,
     })
-    while(index < 6){
-      let toplist = await request(`/top/list?idx=${index}`)
-      this.setData({
-        topListData: toplist.playlist.name
-      })
-      index++
-    }
-    console.log(this.data.topListData)
-  }
 
+    let index = 0
+    let resultTopData = []
+    while (index < 6) {
+      let topList = await request('/top/list?',{
+        idx:index++
+      })
+      let topData = {}
+      topData.name = topList.playlist.name
+      topData.tracks = topList.playlist.tracks.slice(0, 5)
+      resultTopData.push(topData)
+      this.setData({
+        topListData:resultTopData 
+      })
+    }
+    // console.log(this.data.topListData)
+  }
 })

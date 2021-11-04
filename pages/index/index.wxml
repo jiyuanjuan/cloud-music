@@ -34,32 +34,12 @@
     <!-- 内容区 -->
     <view class="topListContainer">
       <swiper class="topListSwiper" scroll-x circular enable-flex>
-        <swiper-item class="topSwiperItem" wx:for="999" wx:key="*this">
-          <text class="topTitle">item</text>
-          <view class="itemInfo">
-            <image src="/static/images/placeholder.jpg"></image>
-            <text>1</text>
-            <text>name</text>
-          </view>
-          <view class="itemInfo">
-            <image src="/static/images/placeholder.jpg"></image>
-            <text>1</text>
-            <text>name</text>
-          </view>
-          <view class="itemInfo">
-            <image src="/static/images/placeholder.jpg"></image>
-            <text>1</text>
-            <text>name</text>
-          </view>
-          <view class="itemInfo">
-            <image src="/static/images/placeholder.jpg"></image>
-            <text>1</text>
-            <text>name</text>
-          </view>
-          <view class="itemInfo">
-            <image src="/static/images/placeholder.jpg"></image>
-            <text>1</text>
-            <text>name</text>
+        <swiper-item class="topSwiperItem" wx:for="{{topListData}}" wx:key="name">
+          <text class="topTitle">{{item.name}}</text>
+          <view class="itemInfo" wx:for="{{item.tracks}}" wx:for-item="cItem" wx:for-index="cIndex" wx:key="cIndex">
+            <image src="{{cItem.al.picUrl}}"></image>
+            <text>{{cIndex+1}}</text>
+            <text>{{cItem.name}}</text> 
           </view>
         </swiper-item>
       </swiper>

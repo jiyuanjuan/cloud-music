@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2908986 */
-  src: url('//at.alicdn.com/t/font_2908986_dkpf5thxakb.woff2?t=1635833046057') format('woff2'),
-       url('//at.alicdn.com/t/font_2908986_dkpf5thxakb.woff?t=1635833046057') format('woff'),
-       url('//at.alicdn.com/t/font_2908986_dkpf5thxakb.ttf?t=1635833046057') format('truetype');
+  src: url('//at.alicdn.com/t/font_2908986_skgdv7qc45r.woff2?t=1636017817018') format('woff2'),
+       url('//at.alicdn.com/t/font_2908986_skgdv7qc45r.woff?t=1636017817018') format('woff'),
+       url('//at.alicdn.com/t/font_2908986_skgdv7qc45r.ttf?t=1636017817018') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-31haoyou:before {
+  content: "\e600";
+}
+
+.icon-gexingzhuangban:before {
+  content: "\e655";
+}
+
+.icon-zhuye:before {
+  content: "\e628";
+}
+
+.icon-xiaoxi:before {
+  content: "\e8bd";
+}
+
+.icon-huangguan-VIP:before {
+  content: "\e616";
 }
 
 .icon-yinle:before {

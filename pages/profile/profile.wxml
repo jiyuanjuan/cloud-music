@@ -1,2 +1,52 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="personalContainer">
+    <!-- 头部 -->
+    <view class="userLogin">
+        <image class="bg" src="../../static/images/personal/bgImg2.jpg"></image>
+        <view class="loginInfo">
+            <view class="avatar">
+                <image src="../../static/images/personal/missing-face.png" bindtap="login"></image>
+                <text>游客</text>
+            </view>
+            <view class="vipCard">
+                <image src="../../static/images/personal/vip-card-bg.png"></image>
+                <view class="infoCard">
+                    <view class="item">
+                        <text class="iconfont icon-huangguan-VIP">黑钻会员</text>
+                        <text class="joinVip">立即开通</text>
+                    </view>
+                    <view class="item">
+                        <text>Music Union</text>
+                    </view>
+                    <view class="item">
+                        <text class="dec">开通会员享受高品质音乐</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 用户信息 -->
+    <view class="userInfo">
+        <image class="arc" src="/static/images/personal/arc.png"></image>
+        <view class="info">
+            <view class="item1">
+                <view>
+                    <view class="iconfont icon-xiaoxi"></view>
+                    <text>我的消息</text>
+                </view>
+                <view>
+                    <view class="iconfont icon-31haoyou"></view>
+                    <text>我的好友</text>
+                </view>
+                <view>
+                    <view class="iconfont icon-zhuye"></view>
+                    <text>个人主页</text>
+                </view>
+                <view>
+                    <view class="iconfont icon-gexingzhuangban"></view>
+                    <text>个性装扮</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
