@@ -1,20 +1,64 @@
-// pages/profile/profile.js
+let startY = 0;
+let endY = 0;
+let moveDistance = 0;
+
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        distance: '',
+        userInfo:''
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
     onLoad: function (options) {
-
+        wx.getStorage({
+            key: 'token',
+            success: (res) => {
+                this.setData({ 
+                    userInfo: {
+                        id: res.data.account.id,
+                        avatar: res.data.profile.avatarUrl
+                    }
+                })
+            }
+        })
     },
-
+    handleTouchStart(event) {
+        startY = event.touches[0].clientY
+    },
+    handleTouchMove(event) {
+        endY = event.touches[0].clientY
+        moveDistance = endY - startY
+        if (moveDistance > 0 && moveDistance < 100) {
+            this.setData({
+                distance: moveDistance + 'rpx'
+            })
+        }
+    },
+    handleTouchEnd(event) {
+        moveDistance = '0rpx'
+        this.setData({
+            distance: moveDistance + 'rpx'
+        })
+    },
+    login() {
+        if (!this.data.userInfo) {
+            wx.navigateTo({
+                url: '/pages/login/login',
+            })
+        }
+    },
+    signOut() {
+        wx.clearStorage({
+          success: () => {
+              wx.showToast({
+                title: '退出成功',
+              })
+          },
+          fail:() =>{
+              wx.showToast({
+                title: '退出失败，请联系管理员',
+              })
+          }
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

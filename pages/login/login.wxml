@@ -1,0 +1,15 @@
+<view class="loginContainer">
+    <text class="loginTitle">欢迎回来！</text>
+    <view class="loginMain">
+        <view class="item phone">
+            <text>手机号</text>
+            <input type="text" placeholder="请输入手机号" id="phone" bindinput="handleLogin" />
+        </view>
+        <view class="item pwd">
+            <text>密码</text>
+            <input type="password" placeholder="请输入密码" id="pwd" bindinput="handleLogin" />
+        </view>
+        <button class="loginButton" bindtap="loginButton">登录</button>
+    </view>
+    <text class="findPwd">忘记密码？</text>
+</view>

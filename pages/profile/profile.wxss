@@ -16,21 +16,29 @@
 }
 
 .userLogin .loginInfo {
-    padding: 50rpx 40rpx 0 40rpx;
+    padding: 90rpx 40rpx 0 40rpx;
 }
 
 .userLogin .loginInfo .avatar {
     position: relative;
     width: 100%;
-    height: 200rpx;
+    height: 160rpx;
     display: flex;
     z-index: 1;
 }
 
+.userLogin .loginInfo .avatar .signOut {
+    font-size: 24rpx;
+    color: rgb(168, 42, 4);
+    display: inline-block;
+    margin-left: 20rpx;
+}
+
 .userLogin .loginInfo .avatar image {
-    width: 150rpx;
-    height: 150rpx;
+    width: 120rpx;
+    height: 120rpx;
     margin-right: 30rpx;
+    border-radius: 30rpx;
 }
 
 .userLogin .loginInfo .avatar text {
@@ -90,38 +98,51 @@
 .userInfo {
     width: 100%;
     height: 600rpx;
-    margin-top: -120rpx;
+    margin-top: -126rpx;
     position: relative;
     z-index: 3;
 }
 
-.userInfo .arc{
+.userInfo .arc {
     width: 100%;
     height: 35rpx;
     position: relative;
     z-index: 3;
 }
 
-.userInfo .info{
-    height: 530rpx;
+.userInfo .info {
+    height: 630rpx;
     margin-top: -10rpx;
     background-color: rgb(249, 249, 249);
 }
 
-.userInfo .info .item1{
+.userInfo .info .item1 {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     background-color: #fff;
     border-radius: 30rpx;
     padding: 10rpx 0;
 }
 
-.userInfo .info .item1 .iconfont{
-font-size: 50rpx;
-text-align: center;
-color: rgb(209, 24, 24);
+.userInfo .info .item1 .iconfont {
+    font-size: 50rpx;
+    text-align: center;
+    color: rgb(209, 24, 24);
 }
 
-.userInfo .info .item1 text{
+.userInfo .info .item1 text {
     font-size: 24rpx;
+}
+
+.userInfo .info .item2 {
+    display: flex;
+    flex-direction: column;
+    margin: 20rpx 30rpx 0 30rpx;
+    background-color: #fff;
+}
+
+.userInfo .info .item2 text {
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1px solid rgb(240, 240, 240);
 }
