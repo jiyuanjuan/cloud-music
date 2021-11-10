@@ -25,11 +25,15 @@
                     <view class="item2">
                         <text class="iconfont icon-shoucang">{{item.data.praisedCount}}</text>
                         <text class="iconfont icon-pinglun">{{item.data.commentCount}}</text>
-                        <button open-type="share"  class="iconfont icon-androidgengduo" >
+                        <button open-type="share" class="iconfont icon-androidgengduo">
                         </button>
                     </view>
                 </view>
-                <video class="mainVideo" src="{{item.data.urlInfo.url}}" object-fit="cover"></video>
+                <video wx:if="{{index === vIndex ? isShowVideo : false}}" 
+                autoplay
+                class="mainVideo" src="{{item.data.urlInfo.url}}" object-fit="cover" poster="{{item.data.coverUrl}}"></video>
+                <!-- 先加载图片，用户点击后切换到视频 -->
+                <image data-index="{{index}}" wx:else class="mainVideoImg" src="{{item.data.coverUrl}}" bindtap="showVideo"></image>
                 <view class="mainTitle">
                     <text>{{item.data.title}}</text>
                 </view>

@@ -5,20 +5,23 @@ Page({
     navList: [],
     currentNavId: '',
     video: [],
-    isRefresher:''
+    isRefresher: '',
+    isShowVideo: true,
+    vIndex: ''
   },
 
   onLoad: async function () {
     let dataList = await request('/video/group/list')
-    let videoList = await request('/video/group',{
-      id:dataList.data.splice(0, 10)[0].id
-    }) 
+    let videoList = await request('/video/group', {
+      id: dataList.data.splice(0, 10)[0].id
+    })
     let navData = dataList.data.splice(0, 10)
     let videoDate = videoList.datas
+    console.log(videoList.datas)
     this.setData({
       navList: navData,
       currentNavId: navData[0].id,
-      video:videoDate,
+      video: videoDate,
     })
 
   },
@@ -29,30 +32,39 @@ Page({
   },
 
   async navActive(event) {
-    let videoList = await request('/video/group',{
-      id:this.data.currentNavId
-    }) 
+    let videoList = await request('/video/group', {
+      id: event.currentTarget.dataset.id
+    })
     let videoDate = videoList.datas
     this.setData({
       currentNavId: event.currentTarget.dataset.id,
-      video:videoDate
+      video: videoDate,
+      vIndex:''
+    })
+    wx.pageScrollTo({
+      scrollTop:0
     })
   },
-  async bindrefresherrefresh(){
-    let videoList = await request('/video/group',{
-      id:this.data.currentNavId
-    }) 
+  async bindrefresherrefresh() {
+    let videoList = await request('/video/group', {
+      id: this.data.currentNavId
+    })
     let videoDate = videoList.datas
     this.setData({
-      video:videoDate,
-      isRefresher:false
+      video: videoDate,
+      isRefresher: false
+    })
+  },
+  showVideo(event) {
+    this.setData({
+      vIndex: event.currentTarget.dataset.index
     })
   },
   // 转发消息，未完成
-  onShareAppMessage: function() {
-    return { 
+  onShareAppMessage: function () {
+    return {
       title: '转发此视频',
       path: '',
     }
   }
-}) 
+})
