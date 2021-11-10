@@ -1,20 +1,20 @@
 let startY = 0;
 let endY = 0;
 let moveDistance = 0;
-
 Page({
     data: {
         distance: '',
-        userInfo:''
+        userInfo: ''
     },
     onLoad: function (options) {
         wx.getStorage({
             key: 'token',
             success: (res) => {
-                this.setData({ 
+                this.setData({
                     userInfo: {
                         id: res.data.account.id,
-                        avatar: res.data.profile.avatarUrl
+                        avatar: res.data.profile.avatarUrl,
+                        nickName: res.data.profile.nickname
                     }
                 })
             }
@@ -47,16 +47,19 @@ Page({
     },
     signOut() {
         wx.clearStorage({
-          success: () => {
-              wx.showToast({
-                title: '退出成功',
-              })
-          },
-          fail:() =>{
-              wx.showToast({
-                title: '退出失败，请联系管理员',
-              })
-          }
+            success(){
+                wx.showToast({
+                    title: '退出成功',
+                })
+                wx.reLaunch({
+                    url: './profile',
+                })
+            },
+            fail: () => {
+                wx.showToast({
+                    title: '退出失败，请联系管理员',
+                })
+            }
         })
     },
     /**

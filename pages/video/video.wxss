@@ -1,1 +1,127 @@
-/* pages/video/video.wxss */
+.videoContainer {
+    width: 100%;
+}
+
+.videoContainer .search {
+    display: flex;
+    height: 60rpx;
+    margin: 10rpx 10rpx 0 10rpx;
+}
+
+.videoContainer .search image {
+    height: 60rpx;
+    width: 60rpx;
+}
+
+.videoContainer .search .searchBtn {
+    flex: 1;
+    text-align: center;
+    line-height: 60rpx;
+    border: 1px solid #dad3d3;
+    color: rgb(206, 29, 64);
+    margin: 0 20rpx;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+}
+
+/* 内容导航区 */
+.content .navContainer {
+    height: 72rpx;
+    line-height: 72rpx;
+    white-space: nowrap;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.content .navContainer text {
+    width: 100%;
+    margin-right: 30rpx;
+    font-size: 28rpx;
+    padding: 5rpx;
+}
+
+.navActive {
+    border-bottom: 2px solid rgb(235, 34, 34);
+}
+
+/* 视频内容区 */
+.mainContainer {
+    width: 100%;
+    height: 1140rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.mainContainer .main video {
+    width: 100%;
+}
+
+.mainContainer .main {
+    width: 100%;
+    padding: 10rpx 0;
+}
+
+.mainContainer .main .mainUser {
+    padding: 20rpx 10rpx;
+    font-size: 24rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+}
+
+.mainContainer .main .mainUser .item1 {
+    display: flex;
+    align-items: center;
+}
+
+.mainContainer .main .mainUser .item2 {
+    display: flex;
+    align-items: center;
+}
+
+.mainContainer .main .mainUser .item2 .iconfont {
+    font-size: 24rpx;
+}
+
+.mainContainer .main .mainUser .item2 text {
+    margin-left: 10rpx;
+}
+
+.mainContainer .main .mainUser .item2 button {
+    display: inline-block;
+    width: 10rpx;
+    background-color: #fff;
+}
+
+.mainContainer .main .mainUser image {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.mainContainer .main .mainUser text {
+    margin-right: 10rpx;
+}
+
+.mainContainer .main .mainVideo {
+    border-radius: 20rpx;
+}
+
+.mainContainer .main .mainTitle {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+}
+
+.mainContainer .main .mainTitle text {
+    font-size: 24rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+}

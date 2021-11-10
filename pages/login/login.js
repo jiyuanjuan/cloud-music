@@ -33,7 +33,7 @@ Page({
             let result = await request('/login/cellphone', {
                 phone: this.data.phone,
                 password: this.data.pwd
-            })
+            },'GET','true')
             if (result.token) {
                 wx.setStorageSync('token', result)
                 wx.showToast({

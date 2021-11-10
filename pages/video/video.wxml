@@ -1,2 +1,39 @@
-<!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="videoContainer">
+    <!-- 头部搜索 -->
+    <view class="search">
+        <image src="../../static/images/video/video.jpg"></image>
+        <view class="searchBtn" bindtap="searchBtn">
+            <text>搜索歌曲</text>
+        </view>
+        <image src="../../static/images/logo.png"></image>
+    </view>
+
+    <!-- 内容区域 -->
+    <view class="content">
+        <!-- 导航标题 -->
+        <scroll-view class="navContainer" scroll-x enable-flex>
+            <text wx:for="{{navList}}" wx:key="id" data-id="{{item.id}}" class="navItem {{currentNavId==item.id?'navActive':''}}" bindtap="navActive">{{item.name}}</text>
+        </scroll-view>
+        <!-- 视频内容 -->
+        <scroll-view class="mainContainer" scroll-y enable-flex refresher-enabled refresher-triggered="{{isRefresher}}" bindrefresherrefresh="bindrefresherrefresh">
+            <view class="main" wx:for="{{video}}" wx:key="index">
+                <view class="mainUser">
+                    <view class="item1">
+                        <image src="{{item.data.creator.avatarUrl}}"></image>
+                        <text>{{item.data.creator.nickname}}</text>
+                    </view>
+                    <view class="item2">
+                        <text class="iconfont icon-shoucang">{{item.data.praisedCount}}</text>
+                        <text class="iconfont icon-pinglun">{{item.data.commentCount}}</text>
+                        <button open-type="share"  class="iconfont icon-androidgengduo" >
+                        </button>
+                    </view>
+                </view>
+                <video class="mainVideo" src="{{item.data.urlInfo.url}}" object-fit="cover"></video>
+                <view class="mainTitle">
+                    <text>{{item.data.title}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

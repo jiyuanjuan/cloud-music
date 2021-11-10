@@ -5,7 +5,7 @@
         <view class="loginInfo">
             <view class="avatar">
                 <image src="{{userInfo?userInfo.avatar:'/static/images/personal/missing-face.png'}}" bindtap="login"></image>
-                <text>{{userInfo?userInfo.id:'游客'}}</text>
+                <text>{{userInfo?userInfo.nickName:'游客'}}</text>
                 <text wx:if="{{userInfo}}" class="signOut" bindtap="signOut">[退出]</text>
             </view>
             <view class="vipCard">
