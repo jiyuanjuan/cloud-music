@@ -1,2 +1,27 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="searchContainer">
+    <!-- 搜索栏 -->
+    <view class="search">
+        <text class="iconfont icon-sousuo_o"></text>
+        <input type="text" placeholder="{{defaultSearchKey}}" 
+        value="{{searchValue}}"
+        bindinput="bindinput"
+        bindblur="bindblur"
+        />
+        <text bindtap="back">取消</text>
+        <view wx:if="{{isShowInfo}}" class="searchInfo">
+            <text wx:for="{{searchKey}}" wx:key="index" class="iconfont icon-sousuo_o">{{item.name}} by {{item.artists[0].name}}</text>
+        </view>
+    </view>
+    <!-- 热门搜索词 -->
+    <view class="searchHot">
+        <view class="hotTitle">
+            <text>热搜榜</text>
+        </view>
+        <view class="hotInfo">
+            <view wx:for="{{hotKeys}}" wx:key="index">
+                <text>{{index+1}}.{{item.searchWord}}</text>
+                <text class="iconfont {{index<3?'icon-hot-fill':''}}"></text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -14,8 +14,10 @@
         <scroll-view class="navContainer" scroll-x enable-flex>
             <text wx:for="{{navList}}" wx:key="id" data-id="{{item.id}}" class="navItem {{currentNavId==item.id?'navActive':''}}" bindtap="navActive">{{item.name}}</text>
         </scroll-view>
-        <!-- 视频内容 -->
-        <scroll-view class="mainContainer" scroll-y enable-flex refresher-enabled refresher-triggered="{{isRefresher}}" bindrefresherrefresh="bindrefresherrefresh">
+        <!-- 视频内容 ，需要登录网易云账号才能显示-->
+        <scroll-view class="mainContainer" scroll-y enable-flex refresher-enabled refresher-triggered="{{isRefresher}}" bindrefresherrefresh="bindrefresherrefresh"
+        scroll-top="{{scrollTop}}"
+        bindscrolltolower="bindscrolltolower">
             <view class="main" wx:for="{{video}}" wx:key="index">
                 <view class="mainUser">
                     <view class="item1">

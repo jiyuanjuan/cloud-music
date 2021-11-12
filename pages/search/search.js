@@ -1,66 +1,51 @@
-// pages/search/search.js
+import request from "../../service/request"
+
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        defaultSearchKey: '',
+        searchValue: '',
+        hotKeys: [],
+        searchKey: [],
+        isShowInfo: false,
+        timer: 0
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
+    onLoad: async function (options) {
+        let result = await request("/search/default")
+        let resultDetail = await request("/search/hot/detail")
+        this.setData({
+            defaultSearchKey: result.data.showKeyword,
+            hotKeys: resultDetail.data,
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
+    back() {
+        wx.reLaunch({
+            url: '/pages/video/video',
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
+    async bindinput(event) {
+        this.data.timer++;
+        setTimeout(() => {
+            this.setData({
+                timer: 0
+            })
+        }, 500)
+        if (this.data.timer === 0) {
+            let resultSearch = await request("/search", {
+                keywords: "day",
+                limit: 10
+            })
+            console.log(resultSearch)
+            this.setData({
+                isShowInfo: true,
+                searchKey: resultSearch.result.song,
+                searchValue: event.detail.value
+            })
+        }
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    bindblur() {
+        this.setData({
+            isShowInfo: false
+        })
     }
 })

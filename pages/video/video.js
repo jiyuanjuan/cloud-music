@@ -7,7 +7,8 @@ Page({
     video: [],
     isRefresher: '',
     isShowVideo: true,
-    vIndex: ''
+    vIndex: '',
+    scrollTop:''
   },
 
   onLoad: async function () {
@@ -39,10 +40,8 @@ Page({
     this.setData({
       currentNavId: event.currentTarget.dataset.id,
       video: videoDate,
-      vIndex:''
-    })
-    wx.pageScrollTo({
-      scrollTop:0
+      vIndex:'',
+      scrollTop:'0'
     })
   },
   async bindrefresherrefresh() {
@@ -58,6 +57,12 @@ Page({
   showVideo(event) {
     this.setData({
       vIndex: event.currentTarget.dataset.index
+    })
+  },
+  bindscrolltolower(){
+    wx.showToast({
+      title: '已经到最底部了！',
+      mask:true
     })
   },
   // 转发消息，未完成
