@@ -4,10 +4,10 @@ Page({
     data: {
         defaultSearchKey: '',
         searchValue: '',
+        sValue: '',
         hotKeys: [],
-        searchKey: [],
         isShowInfo: false,
-        timer: 0
+        timer: ''
     },
 
     onLoad: async function (options) {
@@ -23,25 +23,22 @@ Page({
             url: '/pages/video/video',
         })
     },
-    async bindinput(event) {
-        this.data.timer++;
-        setTimeout(() => {
-            this.setData({
-                timer: 0
-            })
-        }, 500)
-        if (this.data.timer === 0) {
+    bindinput(event) {
+        if (this.data.timer) {
+            clearTimeout(this.data.timer)
+        }
+        this.data.timer = setTimeout(async () => {
             let resultSearch = await request("/search", {
-                keywords: "day",
+                keywords: event.detail.value,
                 limit: 10
             })
-            console.log(resultSearch)
             this.setData({
                 isShowInfo: true,
-                searchKey: resultSearch.result.song,
-                searchValue: event.detail.value
+                sValue: event.detail.value,
+                searchValue: resultSearch.result.songs
             })
-        }
+        }, 1000)
+
     },
     bindblur() {
         this.setData({

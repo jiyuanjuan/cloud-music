@@ -39,5 +39,10 @@ Page({
       })
     }
     // console.log(this.data.topListData)
+  },
+  toSongsList(){
+    wx.navigateTo({
+      url: '/pages/songDay/songDay',
+    })
   }
 })

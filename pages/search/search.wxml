@@ -3,13 +3,13 @@
     <view class="search">
         <text class="iconfont icon-sousuo_o"></text>
         <input type="text" placeholder="{{defaultSearchKey}}" 
-        value="{{searchValue}}"
+        value="{{sValue}}"
         bindinput="bindinput"
         bindblur="bindblur"
         />
         <text bindtap="back">取消</text>
         <view wx:if="{{isShowInfo}}" class="searchInfo">
-            <text wx:for="{{searchKey}}" wx:key="index" class="iconfont icon-sousuo_o">{{item.name}} by {{item.artists[0].name}}</text>
+            <text wx:for="{{searchValue}}" wx:key="index" class="iconfont icon-sousuo_o">{{item.name}} by {{item.artists[0].name}}</text>
         </view>
     </view>
     <!-- 热门搜索词 -->

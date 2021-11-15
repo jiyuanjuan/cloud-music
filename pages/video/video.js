@@ -18,7 +18,6 @@ Page({
     })
     let navData = dataList.data.splice(0, 10)
     let videoDate = videoList.datas
-    console.log(videoList.datas)
     this.setData({
       navList: navData,
       currentNavId: navData[0].id,
