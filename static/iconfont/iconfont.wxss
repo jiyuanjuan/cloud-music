@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2908986 */
-  src: url('//at.alicdn.com/t/font_2908986_5l1kkl81qz5.woff2?t=1636700755959') format('woff2'),
-       url('//at.alicdn.com/t/font_2908986_5l1kkl81qz5.woff?t=1636700755959') format('woff'),
-       url('//at.alicdn.com/t/font_2908986_5l1kkl81qz5.ttf?t=1636700755959') format('truetype');
+  src: url('//at.alicdn.com/t/font_2908986_0gpei4dvmroa.woff2?t=1637031331490') format('woff2'),
+       url('//at.alicdn.com/t/font_2908986_0gpei4dvmroa.woff?t=1637031331490') format('woff'),
+       url('//at.alicdn.com/t/font_2908986_0gpei4dvmroa.ttf?t=1637031331490') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xunhuan1:before {
+  content: "\e610";
+}
+
+.icon-bofang:before {
+  content: "\e624";
+}
+
+.icon-zanting:before {
+  content: "\e629";
+}
+
+.icon-caidan:before {
+  content: "\eaf1";
+}
+
+.icon-shangyiqu:before {
+  content: "\e63c";
+}
+
+.icon-xiayiqu:before {
+  content: "\e63d";
 }
 
 .icon-hot-fill:before {
