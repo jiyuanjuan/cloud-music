@@ -10,7 +10,7 @@
         </view>
         <scroll-view class="songs" scroll-y enable-flex>
             <view class="songsMain" wx:for="{{list}}" wx:key="index">
-                <view class="songInfo" data-ids="{{item.id}}" bindtap="toSongDetail">
+                <view class="songInfo" data-ids="{{item.id}}" data-idxSong="{{index}}" bindtap="toSongDetail">
                     <image src="{{item.album.blurPicUrl}}"></image>
                     <view>
                         <text>{{item.name}}</text>

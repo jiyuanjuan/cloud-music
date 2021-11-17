@@ -1,7 +1,7 @@
 .songContainer {
     width: 100%;
     height: 100vh;
-    background-color: rgb(131, 128, 128);
+    background-color: rgb(157, 157, 158);
     position: relative;
 }
 
@@ -90,18 +90,18 @@
     width: 100%;
 }
 
-.songContainer .progress .progressControll {
+.songContainer .progress .progressControl {
     position: relative;
     margin: 0 20rpx;
 }
 
-.songContainer .progress .progressControll .progressLine {
+.songContainer .progress .progressControl .progressLine {
     width: 460rpx;
     height: 0rpx;
     border: 1px solid rgb(75, 74, 74);
 }
 
-.songContainer .progress .progressControll .progressCricle {
+.songContainer .progress .progressControl .progressCricle {
     width: 20rpx;
     height: 20rpx;
     background-color: #fefefe;
@@ -110,8 +110,15 @@
     top: -10rpx;
     left: 0;
     border-radius: 50%;
+    z-index: 2;
 }
-
+.songContainer .progress .progressControl .progressPlay{
+    display: inline-block;
+    width: 150px;
+    height: 2px;
+    background-color: rgba(218, 134, 56, 0.767);
+    position: absolute;
+}
 /* 播放控制 */
 .songContainer .control {
     padding-top: 80rpx;

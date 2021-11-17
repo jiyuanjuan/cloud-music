@@ -12,8 +12,12 @@
     <!-- 进度条 -->
     <view class="progress">
         <text>00:00</text>
-        <view class="progressControll">
+        <view class="progressControl">
+            <!-- 圆球 -->
             <text class="progressCricle"></text>
+            <!-- 播放进度条 -->
+            <text class="progressPlay"></text>
+            <!-- 总进度条 -->
             <view class="progressLine"></view>
         </view>
         <text>00:00</text>
@@ -21,9 +25,9 @@
     <!-- 播放暂停 -->
     <view class="control">
         <text class="iconfont icon-xunhuan1"></text>
-        <text class="iconfont icon-shangyiqu"></text>
+        <text class="iconfont icon-shangyiqu" id="pre" bindtap="switchSong"></text>
         <text class="iconfont {{isPlay?'icon-zanting':'icon-bofang'}} big" bindtap="play"></text>
-        <text class="iconfont icon-xiayiqu"></text>
+        <text class="iconfont icon-xiayiqu" id="next" bindtap="switchSong"></text>
         <text class="iconfont icon-caidan"></text>
     </view>
 </view>

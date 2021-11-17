@@ -6,7 +6,8 @@
         "pages/video/video",
         "pages/profile/profile",
         "pages/login/login",
-        "pages/song/song"
+        "pages/song/song",
+        "pages/test/test"
     ],
     "window": {
         "backgroundTextStyle": "light",
