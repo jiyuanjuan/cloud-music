@@ -11,7 +11,7 @@
     </view>
     <!-- 进度条 -->
     <view class="progress">
-        <text>00:00</text>
+        <text>{{playTime}}</text>
         <view class="progressControl">
             <!-- 圆球 -->
             <text class="progressCricle"></text>
@@ -20,7 +20,7 @@
             <!-- 总进度条 -->
             <view class="progressLine"></view>
         </view>
-        <text>00:00</text>
+        <text>{{durationTime}}</text>
     </view>
     <!-- 播放暂停 -->
     <view class="control">
