@@ -14,9 +14,9 @@
         <text>{{playTime}}</text>
         <view class="progressControl">
             <!-- 圆球 -->
-            <text class="progressCricle"></text>
+            <text class="progressCricle" style="left: {{currentW}};"></text>
             <!-- 播放进度条 -->
-            <text class="progressPlay"></text>
+            <text class="progressPlay" style="width: {{currentW}};"></text>
             <!-- 总进度条 -->
             <view class="progressLine"></view>
         </view>

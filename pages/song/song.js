@@ -12,7 +12,8 @@ Page({
         songId: '',
         songIdx: '',
         playTime: '',
-        durationTime: ''
+        durationTime: '',
+        currentW:0
     },
 
     onLoad: async function (options) {
@@ -33,6 +34,7 @@ Page({
         })
         playControl.onCanplay(() => {
             this.setData({
+                // 不应该用duration，应该直接在返回的数据取出歌曲时长
                 playTime: momemt(playControl.currentTime * 1000).format('mm:ss'),
                 durationTime: momemt(playControl.duration * 1000).format('mm:ss')
             })
@@ -40,7 +42,13 @@ Page({
         playControl.onTimeUpdate(() => {
             this.setData({
                 playTime: momemt(playControl.currentTime * 1000).format('mm:ss'),
-                durationTime: momemt(playControl.duration * 1000).format('mm:ss')
+                durationTime: momemt(playControl.duration * 1000).format('mm:ss'),
+                currentW:(playControl.currentTime/playControl.duration)*100+'%'
+            })
+        })
+        playControl.onEnded(()=>{
+            this.setData({
+                isPlay:false
             })
         })
     },
@@ -78,7 +86,7 @@ Page({
         playControl.src = songUrl.data[0].url
     },
     // 上一曲和下一曲
-    async switchSong(e) {
+    switchSong(e) {
         playControl.stop()
         let type = e.currentTarget.id
         if (type === 'pre' && this.data.songIdx > 0) {
@@ -86,7 +94,7 @@ Page({
         } else {
             let type = e.currentTarget.id
             if (type === 'next' && this.data.songIdx < 20) {
-            this.switchPreOrNext(-1)
+                this.switchPreOrNext(-1)
             }
         }
     },
